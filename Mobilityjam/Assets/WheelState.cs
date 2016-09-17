@@ -67,7 +67,7 @@ public class WheelState : MonoBehaviour {
 
         //print( "iiiii: "+ preview.y);
 
-        if (preview.y>0f)
+        if (preview.y>=0f)
             return 1f;
         return -1f;
 
@@ -101,7 +101,9 @@ public class WheelState : MonoBehaviour {
 
     public float GetDistanceWithDirection() {
       float distance =  GetDistanceMoved(GetPreviousRotation(), GetCurrentRotation(), GetWheelRadius());
+        print("Hhhh: " + distance);
         distance *= GetDirectionOfWheelRotating(GetPreviousRotation(), GetCurrentRotation());
+        print("HHHH: " + distance);
         return distance;
     }
 }

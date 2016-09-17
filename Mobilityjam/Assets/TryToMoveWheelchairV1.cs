@@ -35,15 +35,15 @@ public class TryToMoveWheelchairV1 : MonoBehaviour
 
         float distanceLeftWheel = _wheelLeftState.GetDistanceWithDirection();
         float distanceRightWheel = _wheelRightState.GetDistanceWithDirection();/////////
-     //   print((distanceLeftWheel*1000f)+ " <D> " + (distanceRightWheel*1000f));
+       print((distanceLeftWheel*1000f)+ " <D> " + (distanceRightWheel*1000f));
 
         realDistanceMoved = (distanceLeftWheel + distanceRightWheel) / 2f ;
 
 
         //////////////////////////
 
-
-        float angle = (distanceRightWheel -distanceLeftWheel)/distanceBetween *Mathf.Rad2Deg;
+        float angle = 0;
+            angle =( (distanceRightWheel - distanceLeftWheel) / distanceBetween) * Mathf.Rad2Deg;
         horizontalRotationAngle = angle;
 
 
