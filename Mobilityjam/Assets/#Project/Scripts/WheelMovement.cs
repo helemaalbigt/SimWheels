@@ -4,12 +4,13 @@ using System.Collections;
 public class WheelMovement : MonoBehaviour {
 
     public Transform _wheelCenter;
+    public bool isLeftWheel = false;
 
     private bool _grabbed = false;
     private float _lastGrabTimeStamp = -999f;
     private float _grabHoverOffTime = 0.1f; //time after which not receiving a signal from the controller is considered as the wheel not being held anymore
 
-    private float _rotationFactor = 20f;
+    private float _rotationFactor = 50f;
 
     public void MoveWheel(Transform controller)
     {
@@ -63,23 +64,18 @@ public class WheelMovement : MonoBehaviour {
 
             float angle = Vector3.Angle(startDirL, currentDirL);
 
-            /*Vector3 axis;
-
-            Quaternion startRot = Quaternion.LookRotation(startDirL);
-            Quaternion currRot = Quaternion.LookRotation(currentDirL);
-
-            Quaternion rotationDelta = startRot * Quaternion.Inverse(currRot); //dont worry about this line that's just how you get a drotation delta
-            rotationDelta.ToAngleAxis(out angle, out axis); //extracts the angle and axis rotation from the quaternion
-            */
             if (angle > 180)
             {
                 angle -= 360; //if bigger than 180, rotate the opposite way to do the shortest distance
             }
-            float sign = Vector3.Cross(startDirL, currentDirL);
 
-            //this.GetComponent<Rigidbody>().angularVelocity = (Time.fixedDeltaTime * angle * _wheelCenter.forward) * _rotationFactor;
+            float sign = Vector3.Cross(transform.TransformDirection(currentDirL), transform.TransformDirection(startDirL)).y > 0 ? 1: -1;
+            sign = isLeftWheel ? -sign : sign;
+
+            this.GetComponent<Rigidbody>().angularVelocity = (Time.fixedDeltaTime * sign * angle * _wheelCenter.forward) * _rotationFactor;
             
             yield return null;
+
         }
     }
 }

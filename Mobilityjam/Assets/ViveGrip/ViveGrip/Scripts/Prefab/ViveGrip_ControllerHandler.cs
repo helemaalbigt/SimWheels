@@ -79,4 +79,13 @@ public class ViveGrip_ControllerHandler : MonoBehaviour {
       yield return null;
     }
   }
+
+    IEnumerator PulsatingVibration(float length, float strength)
+    {
+        for (float i = 0; i < length; i += Time.deltaTime)
+        {
+            Device().TriggerHapticPulse((ushort)Mathf.Lerp(0, MAX_VIBRATION_STRENGTH, strength));
+            yield return null;
+        }
+    }
 }
