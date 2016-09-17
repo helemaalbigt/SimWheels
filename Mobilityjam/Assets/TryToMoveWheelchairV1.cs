@@ -18,13 +18,14 @@ public class TryToMoveWheelchairV1 : MonoBehaviour
 
 
 
-        print("Angle from: " + rotateHorizontal);
-        //???
-        _wheelchairRoot.rotation = Quaternion.Euler(new Vector3(0, -rotateHorizontal , 0)) * _wheelchairRoot.rotation;
+        if (Time.timeSinceLevelLoad > 0.5f)
+        {
+            //???
+            _wheelchairRoot.rotation = Quaternion.Euler(new Vector3(0, -rotateHorizontal, 0)) * _wheelchairRoot.rotation;
 
-        print("Move from: " + moveFowardOf);
-        _wheelchairRoot.position += _wheelchairRoot.forward * moveFowardOf ;
-
+            if (moveFowardOf != 0f)
+                _wheelchairRoot.position += _wheelchairRoot.forward * moveFowardOf;
+        }
     }
 
     private void GetDistanceMovedByTheChair(WheelState _wheelLeftState, WheelState _wheelRightState, out float realDistanceMoved, out float  horizontalRotationAngle)
@@ -35,8 +36,7 @@ public class TryToMoveWheelchairV1 : MonoBehaviour
 
         float distanceLeftWheel = _wheelLeftState.GetDistanceWithDirection();
         float distanceRightWheel = _wheelRightState.GetDistanceWithDirection();/////////
-       print((distanceLeftWheel*1000f)+ " <D> " + (distanceRightWheel*1000f));
-
+      
         realDistanceMoved = (distanceLeftWheel + distanceRightWheel) / 2f ;
 
 
