@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 837c9f45be0564e4ba7ff0ed0b672a16
+timeCreated: 1464880936
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Servicedoor2
+    100002: Servicetunnel_pt1_L0
+    100004: Servicetunnel_pt1_L1
+    100006: Servicetunnel_pt1_L2
+    100008: Servicetunnel_pt2_L0
+    100010: Servicetunnel_pt2_L1
+    100012: Servicetunnel_pt2_L2
+    100014: Servicetunnel_rails_L0
+    100016: Servicetunnel_rails_L1
+    100018: Servicetunnel_rails_L2
+    100020: Servicetunnel_rails_L3
+    100022: Stairs
+    100024: //RootNode
+    100026: Wall_Short.004
+    400000: Servicedoor2
+    400002: Servicetunnel_pt1_L0
+    400004: Servicetunnel_pt1_L1
+    400006: Servicetunnel_pt1_L2
+    400008: Servicetunnel_pt2_L0
+    400010: Servicetunnel_pt2_L1
+    400012: Servicetunnel_pt2_L2
+    400014: Servicetunnel_rails_L0
+    400016: Servicetunnel_rails_L1
+    400018: Servicetunnel_rails_L2
+    400020: Servicetunnel_rails_L3
+    400022: Stairs
+    400024: //RootNode
+    400026: Wall_Short.004
+    2300000: Servicedoor2
+    2300002: Servicetunnel_pt1_L0
+    2300004: Servicetunnel_pt1_L1
+    2300006: Servicetunnel_pt1_L2
+    2300008: Servicetunnel_pt2_L0
+    2300010: Servicetunnel_pt2_L1
+    2300012: Servicetunnel_pt2_L2
+    2300014: Servicetunnel_rails_L0
+    2300016: Servicetunnel_rails_L1
+    2300018: Servicetunnel_rails_L2
+    2300020: Servicetunnel_rails_L3
+    2300022: Stairs
+    2300024: Wall_Short.004
+    3300000: Servicedoor2
+    3300002: Servicetunnel_pt1_L0
+    3300004: Servicetunnel_pt1_L1
+    3300006: Servicetunnel_pt1_L2
+    3300008: Servicetunnel_pt2_L0
+    3300010: Servicetunnel_pt2_L1
+    3300012: Servicetunnel_pt2_L2
+    3300014: Servicetunnel_rails_L0
+    3300016: Servicetunnel_rails_L1
+    3300018: Servicetunnel_rails_L2
+    3300020: Servicetunnel_rails_L3
+    3300022: Stairs
+    3300024: Wall_Short.004
+    4300000: Servicetunnel_pt2_L2
+    4300002: Servicetunnel_pt2_L1
+    4300004: Servicetunnel_pt1_L2
+    4300006: Servicetunnel_pt1_L1
+    4300008: Servicetunnel_rails_L3
+    4300010: Servicetunnel_rails_L2
+    4300012: Servicetunnel_rails_L1
+    4300014: Servicetunnel_pt2_L0
+    4300016: Servicetunnel_pt1_L0
+    4300018: Stairs
+    4300020: Servicedoor2
+    4300022: Wall_Short.004
+    4300024: Servicetunnel_rails_L0
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
