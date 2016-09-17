@@ -44,7 +44,7 @@ public class ViveGrip_ControllerHandler : MonoBehaviour {
     return SteamVR_Controller.Input((int)trackedObject.index);
   }
 
-  ViveInput GetInputFor(string action) {
+  public ViveInput GetInputFor(string action) {
     switch (action.ToLower()) {
       default:
       case "grab":

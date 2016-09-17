@@ -21,6 +21,19 @@ public class ViveGrip_TouchDetection : MonoBehaviour {
     float closestDistance = radius + 1f;
     GameObject touchedObject = null;
     foreach (GameObject gameObject in collidingObjects) {
+      float distance = Vector3.Distance(transform.position, gameObject.transform.position);
+      if (distance < closestDistance) {
+        touchedObject = gameObject;
+        closestDistance = distance;
+      }
+    }
+    return touchedObject;
+  }
+
+  public GameObject NearestInteractiveObject() {
+    float closestDistance = radius + 1f;
+    GameObject touchedObject = null;
+    foreach (GameObject gameObject in collidingObjects) {
       if (!ActiveViveGripObject(gameObject)) { continue; }
       float distance = Vector3.Distance(transform.position, gameObject.transform.position);
       if (distance < closestDistance) {

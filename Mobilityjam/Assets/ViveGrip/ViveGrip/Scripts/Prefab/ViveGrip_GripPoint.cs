@@ -21,6 +21,7 @@ public class ViveGrip_GripPoint : MonoBehaviour {
   private bool externalGrabTriggered = false;
   private GameObject lastTouchedObject;
   private GameObject lastInteractedObject;
+    private bool grabbingWheel = false;
 
   void Start() {
     controller = GetComponent<ViveGrip_ControllerHandler>();
@@ -32,11 +33,13 @@ public class ViveGrip_GripPoint : MonoBehaviour {
 
   void Update() {
     GameObject touchedObject = TouchedObject();
-    HandleTouching(touchedObject);
-    HandleGrabbing(touchedObject);
-    HandleInteraction(touchedObject);
+    GameObject touchedInteractiveObject = TouchedObject();
+    HandleTouching(touchedInteractiveObject);
+    HandleGrabbing(touchedInteractiveObject);
+    HandleInteraction(touchedInteractiveObject);
+    HandleWheelInteraction(touchedObject);
     HandleFumbling();
-    lastTouchedObject = touchedObject;
+    lastTouchedObject = touchedInteractiveObject;
   }
 
   void HandleGrabbing(GameObject givenObject) {
@@ -66,6 +69,14 @@ public class ViveGrip_GripPoint : MonoBehaviour {
     firmlyGrabbed = false;
     Message("ViveGripGrabStop", HeldObject());
   }
+
+    void HandleWheelInteraction(GameObject givenObject)
+    {
+        if (givenObject.layer == LayerMask.NameToLayer("WheelsCollision") && controller.Holding("grab") )
+        {
+            givenObject.SendMessage("MoveWheel", transform);
+        }
+    }
 
   void HandleFumbling() {
     if (grabber.HoldingSomething()) {
