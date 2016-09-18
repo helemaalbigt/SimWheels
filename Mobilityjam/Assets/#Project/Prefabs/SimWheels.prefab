@@ -687,7 +687,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010727820832}
   m_LocalRotation: {x: -3.8523094e-34, y: -9.095478e-13, z: 4.2354116e-22, w: 1}
-  m_LocalPosition: {x: 0, y: -0.034, z: 0}
+  m_LocalPosition: {x: 0, y: 0.068, z: -1.106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -0.611, y: 25.199001, z: -0.284}
   m_Children:
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocity: 0
   _velocityForce: 15
-  _maxVelocity: 100
+  _maxVelocity: 200
   _velocityReductionBySec: 15
   _minVelocity: 2
   _affectedTarget: {fileID: 4000010906634374}
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocity: 0
   _velocityForce: 15
-  _maxVelocity: 100
+  _maxVelocity: 200
   _velocityReductionBySec: 15
   _minVelocity: 2
   _affectedTarget: {fileID: 4000013193245932}
