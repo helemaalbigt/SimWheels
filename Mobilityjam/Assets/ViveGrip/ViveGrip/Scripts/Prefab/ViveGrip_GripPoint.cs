@@ -72,9 +72,17 @@ public class ViveGrip_GripPoint : MonoBehaviour {
 
     void HandleWheelInteraction(GameObject givenObject)
     {
-        if (givenObject.layer == LayerMask.NameToLayer("WheelsCollision") && controller.Holding("grab") )
+        if (givenObject.layer == LayerMask.NameToLayer("WheelsCollision"))
         {
-            givenObject.SendMessage("MoveWheel", transform);
+            if (controller.Holding("grab"))
+            {
+                givenObject.SendMessage("MoveWheel", transform);
+               // controller.VibratePulse(5f, 0.1f, 50f);
+            }
+            else
+            {
+               // controller.VibratePulse(30f, 0.1f, 50f);
+            }
         }
     }
 

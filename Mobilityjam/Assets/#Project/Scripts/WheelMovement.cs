@@ -4,8 +4,10 @@ using System.Collections;
 public class WheelMovement : MonoBehaviour {
 
     public Transform _wheelCenter;
-    public Transform _wheelDirection;
-    public bool isLeftWheel = false;
+    public WheelVelocity _wheelVelocity;
+    public bool invert = false;
+
+    public bool lockRotation = false;
 
     private bool _grabbed = false;
     private float _lastGrabTimeStamp = -999f;
@@ -45,13 +47,13 @@ public class WheelMovement : MonoBehaviour {
 
         Vector3 startPosG = controller.position; //global startposition controller
         Vector3 startPosL = transform.InverseTransformPoint(startPosG); //local startposition controller
-        //startPosL = new Vector3(startPosL.x, startPosL.y, 0); //Local startpos projected onto wheel plane
+        startPosL = new Vector3(startPosL.x, startPosL.y, 0); //Local startpos projected onto wheel plane
 
         while (_grabbed) {
 
             Vector3 controllerCurrPosG = controller.position;
             Vector3 controllerCurrPosL = transform.InverseTransformPoint(controllerCurrPosG); //local startposition controller
-            //controllerCurrPosL = new Vector3(controllerCurrPosL.x, controllerCurrPosL.y, 0); //Local startpos projected onto wheel plane
+            controllerCurrPosL = new Vector3(controllerCurrPosL.x, controllerCurrPosL.y, 0); //Local startpos projected onto wheel plane
 
             //line between initial point and new point
             Debug.DrawLine(transform.TransformPoint(startPosL), transform.TransformPoint(controllerCurrPosL), Color.red); 
@@ -71,13 +73,17 @@ public class WheelMovement : MonoBehaviour {
             }
 
             float sign = Vector3.Cross(transform.TransformDirection(currentDirL), transform.TransformDirection(startDirL)).y > 0 ? 1: -1;
-            sign = isLeftWheel ? -sign : sign;
+            sign = invert ? -sign : sign;
 
             //this.GetComponent<Rigidbody>().angularVelocity = (Time.fixedDeltaTime * sign * angle * _wheelDirection.right) * _rotationFactor;
             //this.GetComponent<Rigidbody>().AddTorque(_wheelDirection.right.normalized * sign * angle);
 
-            Vector3 force = transform.TransformDirection(- startPosL + controllerCurrPosL);
-            this.GetComponent<Rigidbody>().AddForceAtPosition(force * _rotationFactor, startPosG, ForceMode.Force);
+            //Vector3 force = transform.TransformDirection(- startPosL + controllerCurrPosL);
+            //this.GetComponent<Rigidbody>().AddForceAtPosition(force * _rotationFactor, startPosG, ForceMode.Force);
+            if (!lockRotation)
+            {
+                _wheelVelocity.AddVelocity(angle * sign * 1f);
+            }
 
             yield return null;
 

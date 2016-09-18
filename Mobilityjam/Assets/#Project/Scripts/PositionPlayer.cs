@@ -11,7 +11,7 @@ public class PositionPlayer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Invoke("CenterPlayer", 0.05f);
+        Invoke("CenterPlayer", 0.5f);
 	}
 
     void Update()
@@ -19,7 +19,7 @@ public class PositionPlayer : MonoBehaviour {
         if (Input.GetKeyDown(_centerKey))
         {
             //TODO: pressing during gameplay doesnt work as expected
-            //CenterPlayer();
+            CenterPlayer();
         }
     }
 	

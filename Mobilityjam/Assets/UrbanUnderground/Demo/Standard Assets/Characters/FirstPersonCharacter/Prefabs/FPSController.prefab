@@ -228,6 +228,7 @@ MonoBehaviour:
     TimeToIncrease: 1
     TimeToDecrease: 1
     IncreaseCurve:
+      serializedVersion: 2
       m_Curve:
       - time: 0
         value: 0
@@ -247,6 +248,7 @@ MonoBehaviour:
     HorizontalBobRange: 0.1
     VerticalBobRange: 0.1
     Bobcurve:
+      serializedVersion: 2
       m_Curve:
       - time: 0
         value: 0

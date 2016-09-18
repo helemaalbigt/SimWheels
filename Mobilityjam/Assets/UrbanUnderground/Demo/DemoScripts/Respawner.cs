@@ -9,7 +9,8 @@ public class Respawner : MonoBehaviour {
 	Transform location;
 
 	void Start() {
-		location = GameObject.Find ("Respawn").transform;
+		// HIDED BY ELOI NOTIFICATION IN CASE OF BUG
+//		location = GameObject.Find ("Respawn").transform;
 	}
 
 	void OnTriggerEnter(Collider other) {

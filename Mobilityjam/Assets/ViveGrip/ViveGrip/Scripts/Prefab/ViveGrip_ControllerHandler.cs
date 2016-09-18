@@ -17,6 +17,7 @@ public class ViveGrip_ControllerHandler : MonoBehaviour {
   [Tooltip("The button used for interacting.")]
   public ViveInput interact = ViveInput.Trigger;
   private float MAX_VIBRATION_STRENGTH = 3999f;
+  private bool _isVibrating = false;
 
   void Start() {}
 
@@ -80,12 +81,22 @@ public class ViveGrip_ControllerHandler : MonoBehaviour {
     }
   }
 
-    IEnumerator PulsatingVibration(float length, float strength)
+    public void VibratePulse(float frequency, float duration, float strength)
     {
-        for (float i = 0; i < length; i += Time.deltaTime)
+        if (!_isVibrating)
         {
-            Device().TriggerHapticPulse((ushort)Mathf.Lerp(0, MAX_VIBRATION_STRENGTH, strength));
-            yield return null;
+            StartCoroutine(PulsatingVibration(frequency, duration, strength));
         }
+    }
+
+    IEnumerator PulsatingVibration(float frequency, float duration, float strength)
+    {
+        _isVibrating = true;
+        for (float i = 0; i < duration; i += 1/frequency)
+        {
+            Vibrate(1 / (frequency * 1000) , strength);
+            yield return new WaitForSeconds(1 / frequency);
+        }
+        _isVibrating = false;
     }
 }
