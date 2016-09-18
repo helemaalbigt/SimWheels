@@ -11,12 +11,16 @@ ModelImporter:
     100006: Little wheel right
     100008: Little wheels left
     100010: //RootNode
+    100012: Camera
+    100014: Lamp
     400000: Chairs
     400002: Little wheel left
     400004: Little wheel Right
     400006: Little wheel right
     400008: Little wheels left
     400010: //RootNode
+    400012: Camera
+    400014: Lamp
     2300000: Chairs
     2300002: Little wheel left
     2300004: Little wheel Right
@@ -33,6 +37,15 @@ ModelImporter:
     4300006: Little wheel Right
     4300008: Little wheels left
     7400000: Take 001
+    7400002: Little wheel left|Chairs|Take 001|BaseLayer
+    7400004: Little wheel left|Little wheel left|Take 001|BaseLayer
+    7400006: Little wheel left|Little wheel right|Take 001|BaseLayer
+    7400008: Little wheel right|Chairs|Take 001|BaseLayer
+    7400010: Little wheel right|Little wheel left|Take 001|BaseLayer
+    7400012: Little wheel right|Little wheel right|Take 001|BaseLayer
+    7400014: Chairs|Chairs|Take 001|BaseLayer
+    7400016: Chairs|Little wheel left|Take 001|BaseLayer
+    7400018: Chairs|Little wheel right|Take 001|BaseLayer
     9500000: //RootNode
   materials:
     importMaterials: 1
