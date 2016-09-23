@@ -45,9 +45,11 @@ public class QuickFadeInOut : MonoBehaviour
 
 		}
 		else if (FadeState == FadeType.GoToFullColor)
-		{
+        {
+            if (fadeRenderer != null)
+                fadeRenderer.enabled = true;
 
-			if (currentColor.a >= 1f)
+            if (currentColor.a >= 1f)
 				FadeState = FadeType.None;
 
 			currentColor.a = Mathf.Clamp(currentColor.a + fadeSpeedInPct * Time.deltaTime, 0f, 1f);

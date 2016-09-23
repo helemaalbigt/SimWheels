@@ -9,7 +9,7 @@ public class TryToMoveWheelchairV1 : MonoBehaviour
     public WheelState _wheelLeftState;
     public WheelState _wheelRightState;
     
-    void Update()
+    void LateUpdate()
     {
 
         float moveFowardOf=0;
@@ -44,6 +44,7 @@ public class TryToMoveWheelchairV1 : MonoBehaviour
 
         float angle = 0;
             angle =( (distanceRightWheel - distanceLeftWheel) / distanceBetween) * Mathf.Rad2Deg;
+       // Debug.Log("Angle: "+angle);
         horizontalRotationAngle = angle;
 
 

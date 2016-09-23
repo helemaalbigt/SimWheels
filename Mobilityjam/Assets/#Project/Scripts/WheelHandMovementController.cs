@@ -97,9 +97,10 @@ public abstract class WheelHandMovementController : MonoBehaviour {
 
                     wheelSelected = handRelocatedByWheelRoot.x < 0f ? _leftVelocity : _rightVelocity;
 
-                    realForceApply = _forceMultiplicator * directionOnForwardAxis < 0f ? _forceBackwardByUnityDistance : _forceFowardByUnityDistance;
+                    realForceApply =  directionOnForwardAxis < 0f ? _forceBackwardByUnityDistance : _forceFowardByUnityDistance;
+                    realForceApply *= _forceMultiplicator * directionOnForwardAxis;
 
-                    wheelSelected.SetVelocity(directionOnForwardAxis * realForceApply);
+                    wheelSelected.SetVelocity(realForceApply);
 
                 }
 
